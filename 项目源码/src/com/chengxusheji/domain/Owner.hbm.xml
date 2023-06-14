@@ -1,0 +1,77 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Owner" table="t_Owner">
+
+          <!-- 主键业主id -->
+          <id name="ownerId" column="ownerId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 登录密码 -->
+          <property
+            name="password"
+            column="password"
+            type="string"
+            length="20"
+          />
+
+          <!-- 多对一属性: 楼栋名称 -->
+          <many-to-one name="buildingObj"
+            column="buildingObj"
+            class="Building"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 房间号 -->
+          <property
+            name="roomNo"
+            column="roomNo"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 户主 -->
+          <property
+            name="ownerName"
+            column="ownerName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 房屋面积 -->
+          <property
+            name="area"
+            column="area"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 联系方式 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 备注信息 -->
+          <property
+            name="memo"
+            column="memo"
+            type="string"
+            length="500"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Parking" table="t_Parking">
+
+          <!-- 主键车位id -->
+          <id name="parkingId" column="parkingId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 车位名称 -->
+          <property
+            name="parkingName"
+            column="parkingName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 车牌号 -->
+          <property
+            name="plateNumber"
+            column="plateNumber"
+            type="string"
+            length="20"
+          />
+
+          <!-- 多对一属性: 车主 -->
+          <many-to-one name="ownerObj"
+            column="ownerObj"
+            class="Owner"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 操作员 -->
+          <property
+            name="opUser"
+            column="opUser"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

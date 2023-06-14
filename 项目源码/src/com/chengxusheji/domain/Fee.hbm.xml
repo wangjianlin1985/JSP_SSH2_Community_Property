@@ -1,0 +1,69 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Fee" table="t_Fee">
+
+          <!-- 主键费用id -->
+          <id name="feeId" column="feeId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 费用类别 -->
+          <many-to-one name="feeTypeObj"
+            column="feeTypeObj"
+            class="FeeType"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 住户信息 -->
+          <many-to-one name="ownerObj"
+            column="ownerObj"
+            class="Owner"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单日期型属性: 收费时间 -->
+          <property
+            name="feeDate"
+            column="feeDate"
+            	type="string"
+            	length="20"
+          />
+
+          <!-- 简单浮点型属性: 收费金额 -->
+          <property
+            name="feeMoney"
+            column="feeMoney"
+            type="float"
+          />
+
+          <!-- 简单字符串属性: 收费内容 -->
+          <property
+            name="feeContent"
+            column="feeContent"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 操作员 -->
+          <property
+            name="opUser"
+            column="opUser"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

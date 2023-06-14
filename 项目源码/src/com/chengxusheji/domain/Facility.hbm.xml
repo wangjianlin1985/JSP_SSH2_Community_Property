@@ -1,0 +1,52 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Facility" table="t_Facility">
+
+          <!-- 主键设施id -->
+          <id name="facilityId" column="facilityId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 设施名称 -->
+          <property
+            name="name"
+            column="name"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单整型属性: 数量 -->
+          <property
+            name="count"
+            column="count"
+            type="int"
+
+          />
+
+          <!-- 简单日期型属性: 开始使用时间 -->
+          <property
+            name="startTime"
+            column="startTime"
+            	type="string"
+            	length="20"
+          />
+
+          <!-- 简单字符串属性: 设施状态 -->
+          <property
+            name="facilityState"
+            column="facilityState"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

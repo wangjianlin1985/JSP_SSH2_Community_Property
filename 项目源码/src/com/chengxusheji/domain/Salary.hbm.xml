@@ -1,0 +1,60 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Salary" table="t_Salary">
+
+          <!-- 主键工资id -->
+          <id name="salaryId" column="salaryId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 员工 -->
+          <many-to-one name="employeeObj"
+            column="employeeObj"
+            class="Employee"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 工资年份 -->
+          <property
+            name="year"
+            column="year"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 工资月份 -->
+          <property
+            name="month"
+            column="month"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单浮点型属性: 工资金额 -->
+          <property
+            name="salaryMoney"
+            column="salaryMoney"
+            type="float"
+          />
+
+          <!-- 简单字符串属性: 是否发放 -->
+          <property
+            name="fafang"
+            column="fafang"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

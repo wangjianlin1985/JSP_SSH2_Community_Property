@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <constant name="struts.i18n.encoding" value="UTF-8"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />
+     <constant name="struts.multipart.maxSize" value="55000000"/> <!-- 文件上传大小限制 -->    
+       
+          
+	 <package name="login" namespace="/login" extends="struts-default">
+	        <action name="login_*" class="loginAction" method="{1}">
+	        	<result name="front_view">/index.jsp</result>
+	        	<result name="main_user_view">/index.jsp</result>
+	        	<result name="error">/error.jsp</result>  
+	        </action>  
+	 </package>
+	 
+         <!-- BuildingAction配置 -->
+         <package name="Building" namespace="/Building" extends="struts-default">
+           <action name="Building_*" class="buildingAction" method="{1}">
+             <result name="input">/Building/building_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Building/building_frontquery_result.jsp</result>
+             <result name="front_show_view">/Building/building_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- EmployeeAction配置 -->
+         <package name="Employee" namespace="/Employee" extends="struts-default">
+           <action name="Employee_*" class="employeeAction" method="{1}">
+             <result name="input">/Employee/employee_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Employee/employee_frontquery_result.jsp</result>
+             <result name="front_show_view">/Employee/employee_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- OwnerAction配置 -->
+         <package name="Owner" namespace="/Owner" extends="struts-default">
+           <action name="Owner_*" class="ownerAction" method="{1}">
+             <result name="input">/Owner/owner_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Owner/owner_frontquery_result.jsp</result>
+             <result name="front_show_view">/Owner/owner_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- ParkingAction配置 -->
+         <package name="Parking" namespace="/Parking" extends="struts-default">
+           <action name="Parking_*" class="parkingAction" method="{1}">
+             <result name="input">/Parking/parking_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Parking/parking_frontquery_result.jsp</result>
+             <result name="front_show_view">/Parking/parking_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- RepairAction配置 -->
+         <package name="Repair" namespace="/Repair" extends="struts-default">
+           <action name="Repair_*" class="repairAction" method="{1}">
+             <result name="input">/Repair/repair_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Repair/repair_frontquery_result.jsp</result>
+             <result name="front_show_view">/Repair/repair_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- FeeTypeAction配置 -->
+         <package name="FeeType" namespace="/FeeType" extends="struts-default">
+           <action name="FeeType_*" class="feeTypeAction" method="{1}">
+             <result name="input">/FeeType/feeType_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/FeeType/feeType_frontquery_result.jsp</result>
+             <result name="front_show_view">/FeeType/feeType_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- FeeAction配置 -->
+         <package name="Fee" namespace="/Fee" extends="struts-default">
+           <action name="Fee_*" class="feeAction" method="{1}">
+             <result name="input">/Fee/fee_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Fee/fee_frontquery_result.jsp</result>
+             <result name="front_show_view">/Fee/fee_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- FacilityAction配置 -->
+         <package name="Facility" namespace="/Facility" extends="struts-default">
+           <action name="Facility_*" class="facilityAction" method="{1}">
+             <result name="input">/Facility/facility_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Facility/facility_frontquery_result.jsp</result>
+             <result name="front_show_view">/Facility/facility_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- SalaryAction配置 -->
+         <package name="Salary" namespace="/Salary" extends="struts-default">
+           <action name="Salary_*" class="salaryAction" method="{1}">
+             <result name="input">/Salary/salary_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Salary/salary_frontquery_result.jsp</result>
+             <result name="front_show_view">/Salary/salary_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- LeaveWordAction配置 -->
+         <package name="LeaveWord" namespace="/LeaveWord" extends="struts-default">
+           <action name="LeaveWord_*" class="leaveWordAction" method="{1}">
+             <result name="input">/LeaveWord/leaveWord_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/LeaveWord/leaveWord_frontquery_result.jsp</result>
+             <result name="front_show_view">/LeaveWord/leaveWord_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- ManagerAction配置 -->
+         <package name="Manager" namespace="/Manager" extends="struts-default">
+           <action name="Manager_*" class="managerAction" method="{1}">
+             <result name="input">/Manager/manager_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Manager/manager_frontquery_result.jsp</result>
+             <result name="front_show_view">/Manager/manager_frontshow.jsp</result>
+           </action>
+         </package>
+
+
+	 
+	 
+ 	
+	<!-- NavAction配置 -->
+         <package name="Nav" namespace="/Nav" extends="struts-default">
+           <action name="Nav_*" class="navAction" method="{1}">
+             
+           </action>
+         </package>
+
+ 	 <package name="password" namespace="/password" extends="struts-default">
+	        <action name="ChangePassword" class="changePasswordAction">  
+	        	<result name="change_success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package> 
+	  
+	 <package name="User" namespace="/User" extends="struts-default">
+	        <action name="User_*" class="com.chengxusheji.action.UserAction" method="{1}">  
+	        	<result name="user_query_view">/user_query_result.jsp</result>
+	        	<result name="success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package>  
+	 
+</struts>
